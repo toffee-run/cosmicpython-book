@@ -1,0 +1,41 @@
+.book-source { display: contents; }
+html[data-theme='light'] { color-scheme: light; }
+.word-translation { overflow-wrap: anywhere; }
+.translation-cursor-space { display: inline-block; max-width: 100%; }
+.translation-text { box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.reader-note { border-left: 3px solid #186d7a; padding: 1rem; margin: 1.5rem 0; background: #f4f8f9; }
+.theme-toggle {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 110;
+  font: 14px/1.3 'Noto Sans', sans-serif; color: #283644; background: #fff;
+  border: 1px solid #bdc7d0; border-radius: 6px; padding: .65rem .85rem;
+  box-shadow: 0 2px 8px #0002; cursor: pointer;
+}
+.theme-toggle:focus-visible { outline: 3px solid #3686bf; outline-offset: 3px; }
+html[data-theme='dark'] { color-scheme: dark; background: #171b21; }
+html[data-theme='dark'] body { background: #171b21; color: #e0e5ec; }
+html[data-theme='dark'] :is(h1,h2,h3,h4,h5,h6,#toctitle) { color: #f1a58b !important; }
+html[data-theme='dark'] .title { color: #84cbd6 !important; }
+html[data-theme='dark'] a { color: #91bfff; }
+html[data-theme='dark'] a:hover { color: #c2dcff; }
+html[data-theme='dark'] :is(#toc,.sidebarblock,.exampleblock>.content,.admonitionblock td.content,.reader-note) {
+  background: #222831; color: #e0e5ec; border-color: #475361; box-shadow: none;
+}
+html[data-theme='dark'] :is(pre,pre.pygments,code,kbd) { background: #20262e; color: #e0e5ec; }
+html[data-theme='dark'] :is(table,thead,tfoot,tbody,tr,th,td) { background: #20262e; color: #e0e5ec; border-color: #475361; }
+html[data-theme='dark'] table tr:nth-of-type(even) { background: #29323d; }
+html[data-theme='dark'] :is(blockquote,blockquote p,.quoteblock blockquote,.quoteblock p,.quoteblock .attribution,.verseblock pre,.verseblock .attribution) { color: #cbd6e2; }
+html[data-theme='dark'] :is(hr,.sect1,#header,#footer) { border-color: #475361; }
+html[data-theme='dark'] #footer { background: #11151a; }
+html[data-theme='dark'] :is(#footer-text,#footnotes,.subheader,.admonitionblock td.icon) { color: #cbd6e2; }
+html[data-theme='dark'] .theme-toggle { background: #28323e; color: #e0e5ec; border-color: #617084; }
+html[data-theme='dark'] pre.pygments [class*='tok-'] { color: #dae3ec; background: transparent; }
+html[data-theme='dark'] pre.pygments :is(.tok-c,.tok-c1,.tok-cm,.tok-cp,.tok-cs) { color: #99acba; }
+html[data-theme='dark'] pre.pygments :is(.tok-k,.tok-kc,.tok-kd,.tok-kn,.tok-kp,.tok-kr,.tok-kt,.tok-ow) { color: #c9a2ff; }
+html[data-theme='dark'] pre.pygments :is(.tok-s,.tok-s1,.tok-s2,.tok-sd,.tok-sa,.tok-si,.tok-se,.tok-dl) { color: #a4d59a; }
+html[data-theme='dark'] pre.pygments :is(.tok-nf,.tok-nc,.tok-nb,.tok-nn,.tok-nd) { color: #8dcaff; }
+html[data-theme='dark'] pre.pygments :is(.tok-m,.tok-mi,.tok-mf,.tok-mh) { color: #efc085; }
+html[data-theme='dark'] .admonitionblock td.icon [class^='icon-']::before { color: #efc085; text-shadow: none; }
+@media print {
+  .theme-toggle { display: none !important; }
+  html[data-theme='dark'] body { background: white; color: black; }
+}

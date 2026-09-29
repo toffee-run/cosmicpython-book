@@ -1,0 +1,17 @@
+# Copy dist/client into your web root. No proxy_pass / Node.js needed.
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/cosmicpython;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+}
