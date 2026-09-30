@@ -26,6 +26,7 @@ jobs:
       - run: pnpm build
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          SITE_URL: https://toffee-run.github.io
       - run: pnpm typecheck && pnpm test
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
